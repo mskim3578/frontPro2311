@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function min(first, ...rests) {
+	// arguments 
+	 // 변수 선언하기
+    let output   //first
+    let items    // ...rests : array
+	if (Array.isArray(first)) {
+		output = first[0]
+		items = first
+	} else {
+		output=first
+		items= rests
+	}	
+	
+	for (const item of items) {
+		if (output > item) {
+			output=item
+		}
+	}
+	
+	return output
+}
+
+console.log(`min(배열): ${min([52,273,32,103,275,24,57])}`)   //변수 한개 
+console.log(`min(숫자, ...): ${min(52,273,32,103,275,24,57)}`)  //변수 2개 
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
