@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head><meta   charset="UTF-8">
+  <meta charset="EUC-KR">
+    <title></title>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const imgs = document.querySelectorAll('img')
+       // (value, index , imgs)
+        imgs.forEach((img, index) => {
+          img.addEventListener('contextmenu', (event) => {
+        	  alert(index)
+               if (index===1) {
+        	    event.preventDefault()
+        	    }	
+    
+          })
+        })
+      })
+    </script>
+  </head>
+  <body>
+    <img src="http://placekitten.com/300/300" alt="">
+    <img src="http://placekitten.com/300/300" alt="">
+    <img src="http://placekitten.com/300/300" alt="">
+   </body>
+</html>

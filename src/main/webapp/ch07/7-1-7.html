@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+   <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const divs = document.querySelectorAll('body > div')
+		// body > div : body 바로 아래 div--자식
+		// body  div : body 모든 div   자손 
+        divs.forEach((div, index) => {
+          console.log(div, index)
+          const val = index * 10
+          div.style.height = `100px`
+          div.style.backgroundColor = `rgba(${val}, ${val}, ${val})`
+        })
+      })
+    </script>
+</head>
+<body>
+	  <!-- div 태그 25개 -->
+    <div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div>
+    <div></div><div></div><div></div><div></div><div></div>
+</body>
+</html>

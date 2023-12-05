@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+#sun {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	background-color: red;
+	vertical-align: center;
+	text-align: center;
+}
+
+#earth {
+	width: 1px;
+	height:1px;
+	border-radius: 50%;
+	border : solid 25px green;
+
+	vertical-align: center;
+	text-align: center;
+}
+
+#moon {
+	width: 1px;
+	height: 1px;
+	border-radius: 50%;
+	border : solid 10px yellow;
+	vertical-align: center;
+	text-align: center;
+}
+</style>
+<script>
+window.onload = function() {
+	/* const sun = document.getElementById('sun');
+	const earth = document.getElementById('earth');
+	const moon = document.getElementById('moon'); */
+	
+	const sun = document.querySelector('#sun');
+	const earth = document.querySelector('#earth');
+	const moon = document.querySelector('#moon');
+	
+	sun.style.position = 'absolute' ;  
+	earth.style.position = 'absolute'	
+	moon.style.position = 'absolute'
+	
+	sun.style.left = 250 + 'px';
+	sun.style.top = 250 + 'px';
+	
+	let earthAngle=0;
+	let moonAngle=0;
+	
+	setInterval(function() {
+		// 각도를 사용해 지구와 달의 좌표를 구합니다.
+		let earthLeft = 300 +175* Math.cos(earthAngle);
+		let earthTop = 300 + 175* Math.sin(earthAngle);
+		let moonLeft = earthLeft + 55 * Math.cos(moonAngle);
+		let moonTop = earthTop + 55 * Math.sin(moonAngle);
+		// 위치를 이동합니다.
+		earth.style.left = earthLeft + 'px';
+		earth.style.top = earthTop + 'px';
+		moon.style.left = moonLeft + 'px';
+		moon.style.top = moonTop + 'px';
+		// 각도를 변경합니다.
+		earthAngle += 0.1;
+		moonAngle += 0.3;
+		
+	}, 200)
+	
+	
+	
+}
+</script>
+</head>
+<body>
+<div id="sun">sun</div>
+<div id="earth">earth</div>
+<div id="moon">moon</div>
+</body>
+</html>

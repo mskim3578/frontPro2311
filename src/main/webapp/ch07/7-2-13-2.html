@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+<h1>할 일 목록</h1>
+<input id = "todo">
+<button id = "add-button">추가하기</button>
+<button id = "remove">제거하기</button>
+<div id = "todo-list"></div>
+
+</body>
+
+<script>
+//document.addEventListener('DOMContentLoaded',()=>{
+	//문서객체 가져오기
+
+	const input = document.querySelector('#todo')
+	const todoList = document.querySelector('#todo-list')
+	const addButton = document.querySelector('#add-button')
+	const removeButton = document.querySelector('#remove')
+	
+	//function
+	const addTodo=()=>{
+		if(input.value.trim()===''){
+			alert('할 일을 입력해주세요')
+			return
+		}
+	
+		//문서객체 설정하기
+		const item = document.createElement('div')
+		const checkbox = document.createElement('input')
+		const text = document.createElement('span')
+	
+		
+		
+		item.appendChild(checkbox)
+		checkbox.type='checkbox'
+		item.appendChild(text)
+		text.textContent = input.value
+		
+		
+		
+		
+		todoList.appendChild(item)
+		
+		checkbox.addEventListener('change', (event)=>{
+		text.style.textDecoration = event.target.checked? 'line-through' : ''
+		})
+		
+	
+		
+		input.value = ''
+	}  //addTodo end
+	
+	const removeTodo = (key) => {
+		const checks = document.querySelectorAll('div > input')  // array
+		checks.forEach((check)  => {
+			if (check.checked) {
+				todoList.removeChild(check.parentNode)
+			}
+		})
+	}
+	
+	//event
+	addButton.addEventListener('click',addTodo)
+	//enter 동작
+	input.addEventListener('keyup',(event)=>{
+		const ENTER = 13
+		if(event.keyCode === ENTER)
+			addTodo()
+	})
+	
+		removeButton.addEventListener('click', ()=>{		
+			removeTodo()
+		})
+	
+	
+//})
+</script>
+</html>

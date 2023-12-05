@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head><meta   charset="UTF-8">
+    <title>DOMContentLoaded</title>
+     <script>
+      // DOMContentLoaded 이벤트를 연결합니다.
+       const h1 = (text) => `<h1>${text}</h1>`
+      
+      document.addEventListener('DOMContentLoaded', () => {
+    	  const h1 = (text) => `<h1>${text}</h1>`
+        document.body.innerHTML += h1('DOMContentLoaded 2 이벤트 발생')
+      })
+    </script>
+  </head> 
+  <body >
+
+  </body>
+</html>

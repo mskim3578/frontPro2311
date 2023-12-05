@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head><meta   charset="UTF-8">
+    <title>DOMContentLoaded</title>
+     <script>
+     
+   
+      function winload() {
+    	  const h1 = (text) => `<h1>${text}</h1>`
+          document.body.innerHTML += h1('DOMContentLoaded winload 이벤트 발생')
+       }     
+      </script>
+  </head> 
+  <body onload="winload()">
+
+  </body>
+</html>
